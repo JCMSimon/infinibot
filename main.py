@@ -8,6 +8,7 @@ def getRandomWord() -> str:
 		data = response.json()
 		return str(data["items"][0]["title"].replace("-"," ").replace("_"," ").split(" ")[0].replace(",","").replace(".","").replace(":","").replace(";",""))
 	else:
+		print("wikipedia is not ok")
 		return getRandomWord()
 
 def postWebhook(WH_URL, WH_DATA) -> None:
@@ -40,4 +41,5 @@ while True:
 			postWebhook(wh,whdata)
 			time.sleep(3)
 	else:
+		print("neal.fun is not ok")
 		continue
